@@ -303,6 +303,8 @@ Simply prints each value of i on a new line.
 # for i in range(1,n+1):
 #     print(i)
 
+
+
 # n = int(input("please tell your number "))
 
 # for i in range(n,0,-1):
@@ -325,6 +327,13 @@ Simply prints each value of i on a new line.
 
 # print(f"your sum is {sum}")
 
+
+  
+# python is runtime language
+# Factorial of a number
+
+#
+
 # n = int(input("please tell your number:- "))
 
 # fact = 1 
@@ -346,6 +355,35 @@ Simply prints each value of i on a new line.
 #         odd = odd + i
 
 # print(f"your even and odd sum are {even} , {odd}")
+
+
+#Print the sum of all even & odd numbers in a range
+#separately
+
+# n = int(input("tell your number :-"))
+# even = 0
+# odd = 0
+# for i in range(1, n+1):
+#     if i%2 == 0:
+#         even = even +i
+#     else:
+#         odd = odd + i
+    
+# print(f"your sum of even {even} and your sum of odd {odd}")    
+       
+
+
+# n = int (input("please enter the number :-"))
+# count = 0
+# for i in range(1 , n+1):
+#     if n%i == 0:
+#         count = count +1
+# if count ==2:
+#     print("your number is prime")        
+# else:
+#     print("your number is non-prime")        
+
+ 
 
 
 # n =int(input("which number factors you want :- "))
@@ -383,7 +421,15 @@ Simply prints each value of i on a new line.
 #     print("your number is not prime")
 
 
-# a = "SHERYIANS"
+a = "saleh"
+b = ""
+# print(a+b) 
+
+for i in range(len(a)-1, -1 , -1):
+    # print(a[i])
+    b = b + a[i]
+print(b)
+
 
 # b = ""
 # for i in range(len(a)-1,-1,-1):
