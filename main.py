@@ -631,6 +631,324 @@ print(b)
 
 
 
+# Lists in Python — Complete Beginner's Guide
+
+# What is a List?
+# A list is a collection of items stored in a single variable.
+# python# Without list — messy!
+# student1 = "Ali"
+# student2 = "Sara"
+# student3 = "Ahmed"
+
+# # With list — clean!
+# students = ["Ali", "Sara", "Ahmed"]
+
+# 💡 Think of a list like a shopping list — multiple items, in order, in one place.
+
+
+# Creating a List
+# python# Empty list
+# my_list = []
+
+# # List of numbers
+# numbers = [1, 2, 3, 4, 5]
+
+# # List of strings
+# fruits = ["apple", "banana", "mango"]
+
+# # List of mixed types
+# mixed = [1, "Ali", 3.14, True]
+
+# # List inside a list (nested)
+# nested = [[1, 2], [3, 4], [5, 6]]
+# ```
+
+# ---
+
+# ## Indexing — Accessing Items
+
+# Every item has a **position number** called an index.
+# Index always starts from **0**, not 1.
+# ```
+# fruits = ["apple", "banana", "mango", "orange"]
+# index:       0         1         2        3
+# pythonfruits = ["apple", "banana", "mango", "orange"]
+
+# print(fruits[0])   # apple   ← first item
+# print(fruits[1])   # banana
+# print(fruits[2])   # mango
+# print(fruits[3])   # orange  ← last item
+# ```
+
+# ### Negative Indexing — Count from the end
+# ```
+# fruits = ["apple", "banana", "mango", "orange"]
+# index:      -4        -3       -2       -1
+# pythonprint(fruits[-1])   # orange  ← last item
+# print(fruits[-2])   # mango
+# print(fruits[-3])   # banana
+
+# Slicing — Getting Multiple Items
+# pythonfruits = ["apple", "banana", "mango", "orange", "grape"]
+# #           0         1         2        3          4
+
+# # [start : end]  ← end is NOT included
+# print(fruits[0:3])    # ['apple', 'banana', 'mango']
+# print(fruits[1:4])    # ['banana', 'mango', 'orange']
+# print(fruits[0:2])    # ['apple', 'banana']
+
+# # Skip start → from beginning
+# print(fruits[:3])     # ['apple', 'banana', 'mango']
+
+# # Skip end → till end
+# print(fruits[2:])     # ['mango', 'orange', 'grape']
+
+# # Full copy
+# print(fruits[:])      # ['apple', 'banana', 'mango', 'orange', 'grape']
+
+# # Every 2nd item [start:end:step]
+# print(fruits[::2])    # ['apple', 'mango', 'grape']
+
+# # Reverse the list
+# print(fruits[::-1])   # ['grape', 'orange', 'mango', 'banana', 'apple']
+
+# Modifying a List
+# Change an item
+# pythonfruits = ["apple", "banana", "mango"]
+
+# fruits[1] = "strawberry"
+
+# print(fruits)   # ['apple', 'strawberry', 'mango']
+
+# List Methods — All the Tools
+# Adding Items
+# pythonfruits = ["apple", "banana"]
+
+# # append() — add ONE item at the END
+# fruits.append("mango")
+# print(fruits)   # ['apple', 'banana', 'mango']
+
+# # insert() — add at a SPECIFIC position
+# fruits.insert(1, "orange")   # insert at index 1
+# print(fruits)   # ['apple', 'orange', 'banana', 'mango']
+
+# # extend() — add MULTIPLE items at the end
+# fruits.extend(["grape", "kiwi"])
+# print(fruits)   # ['apple', 'orange', 'banana', 'mango', 'grape', 'kiwi']
+
+# Removing Items
+# pythonfruits = ["apple", "banana", "mango", "banana"]
+
+# # remove() — removes FIRST match by VALUE
+# fruits.remove("banana")
+# print(fruits)   # ['apple', 'mango', 'banana']
+
+# # pop() — removes by INDEX (default: last item)
+# fruits.pop()       # removes last item
+# print(fruits)      # ['apple', 'mango']
+
+# fruits.pop(0)      # removes item at index 0
+# print(fruits)      # ['mango']
+
+# # clear() — removes EVERYTHING
+# fruits.clear()
+# print(fruits)   # []
+
+# # del — delete by index or entire list
+# fruits = ["apple", "banana", "mango"]
+# del fruits[1]
+# print(fruits)   # ['apple', 'mango']
+
+# Searching & Counting
+# pythonfruits = ["apple", "banana", "mango", "apple"]
+
+# # index() — find position of item
+# print(fruits.index("mango"))    # 2
+# print(fruits.index("apple"))    # 0 (first occurrence)
+
+# # count() — how many times item appears
+# print(fruits.count("apple"))    # 2
+# print(fruits.count("banana"))   # 1
+
+# # in — check if item exists (True/False)
+# print("mango" in fruits)        # True
+# print("grape" in fruits)        # False
+
+# Sorting & Reversing
+# pythonnumbers = [3, 1, 4, 1, 5, 9, 2, 6]
+
+# # sort() — sorts in place (changes original)
+# numbers.sort()
+# print(numbers)   # [1, 1, 2, 3, 4, 5, 6, 9]
+
+# # sort descending
+# numbers.sort(reverse=True)
+# print(numbers)   # [9, 6, 5, 4, 3, 2, 1, 1]
+
+# # sorted() — returns NEW sorted list (original unchanged)
+# nums = [3, 1, 4, 1, 5]
+# new = sorted(nums)
+# print(nums)    # [3, 1, 4, 1, 5]  ← unchanged
+# print(new)     # [1, 1, 3, 4, 5]  ← new sorted list
+
+# # reverse() — reverses in place
+# fruits = ["apple", "banana", "mango"]
+# fruits.reverse()
+# print(fruits)   # ['mango', 'banana', 'apple']
+
+# Other Useful Methods
+# pythonnumbers = [1, 2, 3, 4, 5]
+
+# # len() — how many items
+# print(len(numbers))     # 5
+
+# # sum() — total of all numbers
+# print(sum(numbers))     # 15
+
+# # min() and max()
+# print(min(numbers))     # 1
+# print(max(numbers))     # 5
+
+# # copy() — make a copy of list
+# original = [1, 2, 3]
+# copy = original.copy()
+# copy.append(4)
+# print(original)   # [1, 2, 3]  ← not affected
+# print(copy)       # [1, 2, 3, 4]
+
+# Looping Through a List
+# pythonfruits = ["apple", "banana", "mango"]
+
+# # Basic loop
+# for fruit in fruits:
+#     print(fruit)
+# # apple
+# # banana
+# # mango
+
+# # Loop with index
+# for i in range(len(fruits)):
+#     print(i, fruits[i])
+# # 0 apple
+# # 1 banana
+# # 2 mango
+
+# # enumerate() — cleaner way to get index + value
+# for index, fruit in enumerate(fruits):
+#     print(index, fruit)
+# # 0 apple
+# # 1 banana
+# # 2 mango
+
+# List Comprehension — Shortcut to Create Lists
+# python# Normal way — 4 lines
+# squares = []
+# for x in range(1, 6):
+#     squares.append(x * x)
+# print(squares)   # [1, 4, 9, 16, 25]
+
+# # List comprehension — 1 line!
+# squares = [x * x for x in range(1, 6)]
+# print(squares)   # [1, 4, 9, 16, 25]
+# With condition
+# pythonnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# # Get only even numbers
+# evens = [x for x in numbers if x % 2 == 0]
+# print(evens)   # [2, 4, 6, 8, 10]
+
+# # Get squares of even numbers
+# even_squares = [x*x for x in numbers if x % 2 == 0]
+# print(even_squares)   # [4, 16, 36, 64, 100]
+
+# Nested Lists — List inside a List
+# python# A 3x3 grid (like a table)
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ]
+
+# # Access items — [row][column]
+# print(matrix[0][0])   # 1  (row 0, col 0)
+# print(matrix[1][2])   # 6  (row 1, col 2)
+# print(matrix[2][1])   # 8  (row 2, col 1)
+
+# # Loop through nested list
+# for row in matrix:
+#     for item in row:
+#         print(item, end=" ")
+#     print()
+# # 1 2 3
+# # 4 5 6
+# # 7 8 9
+
+# Common Mistakes Beginners Make
+# python# ❌ Mistake 1 — Index out of range
+# fruits = ["apple", "banana", "mango"]
+# print(fruits[5])   # ERROR! only 0,1,2 exist
+
+# # ✅ Fix — check length first
+# if len(fruits) > 5:
+#     print(fruits[5])
+
+# # ❌ Mistake 2 — Modifying list while looping
+# numbers = [1, 2, 3, 4, 5]
+# for n in numbers:
+#     numbers.remove(n)   # unpredictable results!
+
+# # ✅ Fix — loop over a copy
+# for n in numbers.copy():
+#     numbers.remove(n)
+
+# # ❌ Mistake 3 — Copy by assignment (not a real copy)
+# a = [1, 2, 3]
+# b = a              # b points to SAME list!
+# b.append(4)
+# print(a)           # [1, 2, 3, 4]  ← a also changed!
+
+# # ✅ Fix — use .copy()
+# a = [1, 2, 3]
+# b = a.copy()       # real independent copy
+# b.append(4)
+# print(a)           # [1, 2, 3]     ← a unchanged
+# print(b)           # [1, 2, 3, 4]
+
+# Quick Reference Cheat Sheet
+# pythonfruits = ["apple", "banana", "mango"]
+
+# # Access
+# fruits[0]              # first item
+# fruits[-1]             # last item
+# fruits[1:3]            # slice
+
+# # Add
+# fruits.append("grape")        # add to end
+# fruits.insert(1, "orange")    # add at position
+# fruits.extend(["kiwi"])       # add multiple
+
+# # Remove
+# fruits.remove("banana")       # by value
+# fruits.pop()                  # last item
+# fruits.pop(0)                 # by index
+# fruits.clear()                # all items
+
+# # Search
+# fruits.index("mango")         # find position
+# fruits.count("apple")         # count occurrences
+# "mango" in fruits             # check existence
+
+# # Sort
+# fruits.sort()                 # ascending
+# fruits.sort(reverse=True)     # descending
+# fruits.reverse()              # flip order
+
+# # Info
+# len(fruits)                   # count items
+# min(fruits)                   # smallest
+# max(fruits)                   # largest
+
+
 # a = [12,13,18,15,16]
 
 # for i in range(len(a)-1):
